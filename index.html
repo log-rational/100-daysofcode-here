@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>100 Days of Code</title>
+    <!-- map core -->
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-core.js"></script>
+
+    <!-- map services -->
+    <script type="text/javascript" src="https://js.api.here.com/v3/3.1/mapsjs-service.js"></script>
+
+    <!-- ui -->
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-ui.js" type="text/javascript" charset="utf-8"></script>
+
+    <!-- events -->
+    <script src="https://js.api.here.com/v3/3.1/mapsjs-mapevents.js" type="text/javascript" charset="utf-8"></script>
+    <!-- style -->
+    <link rel="stylesheet" type="text/css" href="https://js.api.here.com/v3/3.1/mapsjs-ui.css" />
+
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="mapContainer" style="align-self: center; width: 100%; height: 80vh; background-color: #a87bdf;">
+    </div>
+
+</body>
+<script src="./key.js"></script>
+<script>
+
+    var platform = new H.service.Platform({
+        apikey: '4HlzWBqUj6zntYLLh9lkR79YKx-LTuYQ3XieYzhbLSo'
+    });
+
+    var defaultLayers = platform.createDefaultLayers();
+    var map = new H.Map(
+        document.getElementById('mapContainer'),
+        defaultLayers.vector.normal.map,
+        {
+            zoom: 8,
+            center: { lat: 51, lng: -2 }
+        }
+    )
+    // initialize basic map events
+    console.log(H.ui)
+    var ui = H.ui.UI.createDefault(map, defaultLayers)
+    var mapEvents = new H.mapevents.MapEvents(map);
+    // Initialize for map behaviour on events
+    var behavior = new H.mapevents.Behavior(mapEvents);
+    // adding default uis
+
+</script>
+
+</html>
